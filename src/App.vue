@@ -1,10 +1,12 @@
 <template>
   <v-app>
-    <v-navigation-drawer app clipped v-model="drawer" width>
+    <v-navigation-drawer app v-model="drawer" clipped>
       <v-container>
-        <v-list-item>Iinhalt(もくじ)</v-list-item>
+        <v-list-item>
+          <v-list-item-title>Iinhalt(もくじ)</v-list-item-title>
+        </v-list-item>
         <v-divider></v-divider>
-        <v-list dense nav>
+        <v-list nav>
           <v-list-item v-for="unit in units" :key="unit.number">
             <v-list>{{ unit.title }}</v-list>
           </v-list-item>
@@ -15,6 +17,9 @@
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Szenen1 Words</v-toolbar-title>
     </v-app-bar>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
     <v-footer color="#a9a9a9" app>参考: Szenen1 heute akutuell 場面で学ぶドイツ語  三修社</v-footer>
   </v-app>
 </template>
@@ -24,7 +29,7 @@
 export default {
   data(){
     return{
-      drawer: null,
+      drawer: false,
       units: [
         {
           number: 1,
@@ -68,7 +73,7 @@ export default {
         },
         {
           number: 9,
-          title: "Uhrzeit und Datum",
+          title: "9 Uhrzeit und Datum",
           link: "#"
         },
         {
@@ -91,3 +96,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>
