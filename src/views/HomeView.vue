@@ -3,11 +3,13 @@
   <p>Szenen1 heute aktuell 場面で学ぶドイツ語</p>
   <v-row>
     <v-col v-for="list in lists" :key="list.name" cols="12" md="6" sm="6" lg="4">
-      <v-card dark elevation="16" :to="list.url">
-        <v-img :src="list.img" :aspect-ratio="3/2">
-          <v-card-title>{{ list.title }}</v-card-title>
-        </v-img>
-      </v-card>
+      <v-hover v-slot="{ hover }">
+        <v-card dark :to="list.url" :elevation="hover ? 10 : 0" :class="{ 'on-hover': hover }">
+          <v-img :src="list.img" :aspect-ratio="3/2" :elevation="hover ? 10 : 0">
+            <v-card-title>{{ list.title }}</v-card-title>
+          </v-img>
+        </v-card>
+      </v-hover>
     </v-col>
   </v-row>
 </v-container>
@@ -78,7 +80,7 @@
             img: require("../assets/experience.png"),
             url: "/12"
           },
-        ]
+        ],
       }
     }
   }
@@ -86,12 +88,20 @@
 
 <style scoped>
 p {
-  color: #ffd700;
+  color: #ffa500;
   text-align: center;
   font-size: 32px;
 }
 
-.container {
-  background-color: #ffa500;
+.v-card {
+  transition: opacity .4s ease-in-out;
+}
+
+.v-card:not(.on-hover) {
+  opacity: 0.8;
+ }
+
+.show-btns {
+  color: rgba(255, 255, 255, 1) !important;
 }
 </style>
