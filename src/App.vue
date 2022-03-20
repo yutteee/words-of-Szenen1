@@ -17,9 +17,9 @@
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title @click="$router.push('/')" style="cursor:pointer">Szenen1 Words</v-toolbar-title>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
     <v-footer color="#a9a9a9" app>参考: Szenen1 heute akutuell 場面で学ぶドイツ語  三修社</v-footer>
   </v-app>
 </template>
