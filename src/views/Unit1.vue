@@ -1,5 +1,6 @@
 <template>
 <v-container>
+    <p>Unit1 Kennenlernen</p>
     <!-- 挨拶のリスト -->
     <v-layout row>
         <v-switch v-for="greetTitle in greetTitles" :key="greetTitle.value" v-model="greetTitle.shown" :label="greetTitle.value"></v-switch>
@@ -169,24 +170,23 @@ export default {
     },
     computed: {
         shownGreets() {
-            return this.greetTitles.filter(h => h.shown);
+            return this.greetTitles.filter(h => h.shown == true);
         },
         shownNumbers() {
-            return this.numberTitles.filter(h => h.shown);
+            return this.numberTitles.filter(h => h.shown == true);
         },
         shownNowns() {
-            return this.nownTitles.filter(h => h.shown);
+            return this.nownTitles.filter(h => h.shown == true);
         },
         shownVerbs() {
-            return this.verbTitles.filter(h => h.shown);
+            return this.verbTitles.filter(h => h.shown == true);
         },
         shownOthers() {
-            return this.otherTitles.filter(h => h.shown);
+            return this.otherTitles.filter(h => h.shown == true);
         },
     }
 }
 </script>
 
 <style scoped>
-
 </style>

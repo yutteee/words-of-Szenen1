@@ -87,12 +87,6 @@
 </script>
 
 <style scoped>
-p {
-  color: #ffa500;
-  text-align: center;
-  font-size: 32px;
-}
-
 .v-card {
   transition: opacity .4s ease-in-out;
 }

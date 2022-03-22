@@ -97,6 +97,10 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style>
+p {
+  color: #ffa500;
+  text-align: center;
+  font-size: 32px;
+}
 </style>
