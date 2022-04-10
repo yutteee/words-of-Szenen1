@@ -19,11 +19,32 @@
     </v-app-bar>
     <v-main>
       <router-view></router-view>
+      <v-footer color="white">
+        <v-card flat tile width="100%" class="text-center">
+          <v-card-text>
+            <v-btn
+              v-for="icon in icons"
+              :key="icon.name"
+              class="mx-4"
+              icon
+              :href="icon.url"
+            >
+              <v-icon size="24px">
+                {{ icon.name }}
+              </v-icon>
+            </v-btn>
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-text>
+            参考: Szenen1 heute akutuell 場面で学ぶドイツ語  三修社
+          </v-card-text>
+        </v-card>
+      </v-footer>
     </v-main>
-    <v-footer color="#a9a9a9" app>参考: Szenen1 heute akutuell 場面で学ぶドイツ語  三修社</v-footer>
   </v-app>
 </template>
 
+<script src="https://kit.fontawesome.com/fef103b0c4.js" crossorigin="anonymous"></script>
 <script>
 
 export default {
@@ -91,9 +112,23 @@ export default {
           title: "12 Erlebnisse und Erfahrungen",
           link: "/12"
         }
-      ]
+      ],
+      icons: [
+        {
+          name: "mdi-github",
+          url: "https://github.com/yutteee"
+        },
+        {
+          name: "mdi-twitter",
+          url: "https://twitter.com/yutteeelog"
+        },
+        {
+          name: "mdi-card-account-details-outline",
+          url: "https://yutteee-portfolio.tk/"
+        }
+      ],
     }
-  }
+  },
 };
 </script>
 

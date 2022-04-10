@@ -54,6 +54,8 @@ export default {
     name: "unit1",
     data(){
         return {
+            singleselect: false,
+            selected: [],
             greetTitles: [
                 { text: "挨拶", value: "deutsch", aligin: "start", shown: true },
                 { text: "訳", value: "japan", shown: true }
